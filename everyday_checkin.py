@@ -59,6 +59,7 @@ class Report(object):
         r = s.get(CAS_LOGIN_URL, params={"service": CAS_RETURN_URL})
         x = re.search(r"""<input.*?name="CAS_LT".*?>""", r.text).group(0)
         cas_lt = re.search(r'value="(LT-\w*)"', x).group(1)
+        print(cas_lt)
 
         r = s.get(CAS_CAPTCHA_URL)
         img = PIL.Image.open(io.BytesIO(r.content))
@@ -71,7 +72,7 @@ class Report(object):
                 else:
                     pix[i, j] = (255, 255, 255)
         lt_code = pytesseract.image_to_string(img).strip()
-
+        print(lt_code)
         data = {
             "model": "uplogin.jsp",
             "service": CAS_RETURN_URL,
