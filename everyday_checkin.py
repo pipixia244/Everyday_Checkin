@@ -85,6 +85,7 @@ class Report(object):
         }
         r = s.post(CAS_LOGIN_URL, data=data)
         rtext = r.text
+        print(rtext)
         rtext = rtext.encode('ascii','ignore').decode('utf-8','ignore')
         soup = BeautifulSoup(rtext, 'html.parser')
         token = soup.find("input", {"name": "_token"})['value']
