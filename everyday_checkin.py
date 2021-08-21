@@ -85,6 +85,7 @@ class Report(object):
             "LT": lt_code,
         }
         r = s.post(CAS_LOGIN_URL, data=data)
+        print(r.text)
         req = s.get("https://weixine.ustc.edu.cn/2020")
         reqt = req.text
         print(reqt)
