@@ -42,7 +42,7 @@ class Report(object):
         now_status = is_inschool
 
 
-        CAS_LOGIN_URL = "https://passport.ustc.edu.cn/login"
+        CAS_LOGIN_URL = "https://passport.ustc.edu.cn/login?service=http%3A%2F%2Fweixine.ustc.edu.cn%2F2020%2Fcaslogin"
         CAS_CAPTCHA_URL = "https://passport.ustc.edu.cn/validatecode.jsp?type=login"
         CAS_RETURN_URL = "https://weixine.ustc.edu.cn/2020/caslogin"
         REPORT_URL = "https://weixine.ustc.edu.cn/2020/daliy_report"
