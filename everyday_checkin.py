@@ -84,10 +84,9 @@ class Report(object):
             "LT": lt_code,
         }
         r = s.post(CAS_LOGIN_URL, data=data)
-        rtext = r.text
-        print(rtext)
-        rtext = rtext.encode('ascii','ignore').decode('utf-8','ignore')
-        soup = BeautifulSoup(rtext, 'html.parser')
+        req = s.get("https://weixine.ustc.edu.cn/2020")
+        reqt = req.text.encode('ascii','ignore').decode('utf-8','ignore')
+        soup = BeautifulSoup(reqt, 'html.parser')
         token = soup.find("input", {"name": "_token"})['value']
 
         data = {
