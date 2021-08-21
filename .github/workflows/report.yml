@@ -3,7 +3,7 @@ name: Auto-report action
 on: 
   push:
     branches:
-      - master
+      - main
   schedule:
     - cron: '15 4,11,17,23 * * *'
 
