@@ -38,3 +38,4 @@ jobs:
         EMER_PHONE2: ${{ secrets.Emer_phone2 }}
       run: |
         sudo cat /proc/cpuinfo
+        sudo free
